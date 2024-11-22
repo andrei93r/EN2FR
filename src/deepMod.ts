@@ -8,7 +8,7 @@ const observer = new MutationObserver(() => {
         clipButton.addEventListener('click', () => {
             setTimeout(() => {
                 window.close()
-            }, 400)
+            }, 200)
         })
     }
 
