@@ -1,20 +1,20 @@
 {
-  "name": "DeeplChrome",
-  "version": "1.0.0",
+  "name": "E2F",
+  "version": "0.0.1",
   "description": "",
   "type": "module",
   "main": "dist/index.js",
   "scripts": {
     "build": "tsc",
-    "copy" : "node ",
+    "copy": "node ",
     "es": "node esbuild.config.js && node copy.js"
   },
   "devDependencies": {
     "esbuild": "^0.24.0",
-    "typescript": "^5.5.3"
+    "typescript": "^5.5.3",
+    "@types/chrome": "^0.0.283"
   },
   "private": true,
   "dependencies": {
-    "@types/chrome": "^0.0.283"
   }
 }

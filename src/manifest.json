@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "DLunch",
+  "name": "E2F",
   "version": "0.0.1",
   "permissions": [
     "tabs",
@@ -22,12 +22,20 @@
   ],
   "content_scripts": [
     {
-      "matches": ["https://www.deepl.com/en/*"],
-      "js": ["deepMod.js"]
+      "matches": [
+        "https://www.deepl.com/en/*"
+      ],
+      "js": [
+        "deepMod.js"
+      ]
     },
     {
-      "matches": ["<all_urls>"],
-      "js": ["pageMod.js"]
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "pageMod.js"
+      ]
     }
   ]
 }
