@@ -1,0 +1,33 @@
+{
+  "manifest_version": 3,
+  "name": "DLunch",
+  "version": "0.0.1",
+  "permissions": [
+    "tabs",
+    "activeTab",
+    "scripting",
+    "windows",
+    "system.display"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "icons": {
+    "16": "icons/france.png",
+    "48": "icons/france.png",
+    "128": "icons/france.png"
+  },
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["https://www.deepl.com/en/*"],
+      "js": ["deepMod.js"]
+    },
+    {
+      "matches": ["<all_urls>"],
+      "js": ["pageMod.js"]
+    }
+  ]
+}
