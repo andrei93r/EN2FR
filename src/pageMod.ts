@@ -5,29 +5,48 @@ console.log("Any Page Started")
 const pressedKeys = new Set();
 
 document.addEventListener("keydown", (event) => {
-    pressedKeys.add(event.key.toLowerCase());
-    if (pressedKeys.has("alt") && pressedKeys.has("t")) {
-        console.log("Alt + t pressed!");
 
-        const defaultUrl = "https://www.deepl.com/en/translator#en/fr/"
+    const key = event.key.toLowerCase()
 
-        const param = getHighlightedText()
+    console.log("Key", key)
 
-        if (!param) return OpenPopUp(defaultUrl);
+    console.log(pressedKeys);
 
-        OpenPopUp(`${defaultUrl}${encodeURIComponent(param)}`);
+    switch (key) {
+        case "alt":
+            pressedKeys.add(key)
+            ;
+            break;
+
+        case "t":
+            if (pressedKeys.has("alt")) {
+                console.log("Alt + t pressed!");
+
+                const defaultUrl = "https://www.deepl.com/en/translator#en/fr/"
+
+                const param = getHighlightedText()
+
+                if (!param) return OpenPopUp(defaultUrl);
+
+                OpenPopUp(`${defaultUrl}${encodeURIComponent(param)}`);
+
+                function getHighlightedText() {
+                    return window.getSelection()?.toString();
+                }
+            }
+            pressedKeys.clear()
+            break;
+
+        case "q" :
+            window.close()
+            break;
+
+        default:
+            pressedKeys.clear()
+
 
     }
-
-    function getHighlightedText() {
-        return window.getSelection()?.toString();
-    }
-
-});
-
-document.addEventListener("keyup", (event) => {
-    pressedKeys.delete(event.key.toLowerCase());
-});
+})
 
 
 function OpenPopUp(url: string) {
