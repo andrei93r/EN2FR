@@ -10,11 +10,10 @@
     "es": "node esbuild.config.js && node copy.js"
   },
   "devDependencies": {
+    "@types/chrome": "^0.0.283",
+    "archiver": "^7.0.1",
     "esbuild": "^0.24.0",
-    "typescript": "^5.5.3",
-    "@types/chrome": "^0.0.283"
+    "typescript": "^5.5.3"
   },
-  "private": true,
-  "dependencies": {
-  }
+  "private": true
 }
